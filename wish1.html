@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Brother!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onload="loadName()">
+  <audio autoplay loop>
+    <source src="birthday.mp3" type="audio/mpeg">
+  </audio>
+  <div class="main">
+    <h1>🎈 Happy Birthday both of you!,<br> Bhai Faizan , Hamid!🎈</h1>
+    <h2>From: your sister <span id="nameSpan"></span></h2>
+    <p>Wishing you love, success, and all the joy in the world!</p>
+    <button onclick="location.href='wish2.html'">Next Surprise ➡️</button>
+  </div>
+
+  <script>
+    function loadName() {
+      const sender = localStorage.getItem("sender");
+      document.getElementById("nameSpan").innerText = sender || "Your Sister";
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+  <script>
+    window.onload = () => {
+      confetti({
+        particleCount: 100,
+        spread: 90,
+        origin: { y: 0.6 }
+      });
+    };
+  </script>
+</body>
+</html>
